@@ -16,4 +16,12 @@ Getting Started
 ### Test API ###
 
 6. Open website in browser at ``http://127.0.0.1:8000/tourlist``, return list of tourist points
-7. Open website in browser at ``http://127.0.0.1:8000/tourlist/1/``, return details of tourist points
+7. Open website in browser at ``http://127.0.0.1:8000/tourdetails/1/``, return details of tourist points
+
+
+### Unit Tests ###
+
+### Docker ###
+
+
+### Deploy ###
