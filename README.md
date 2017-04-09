@@ -32,7 +32,7 @@ Getting Started
    docker run -p 8000:8000 -d myapplication
 
    ############################################################
-   # Dockerfile for a Scrapy development environment
+   # Dockerfile for Django Rest API development environment
    # Based on Ubuntu Image
    ############################################################
 
