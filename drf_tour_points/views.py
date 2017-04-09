@@ -2,6 +2,8 @@ from django.shortcuts import render_to_response, redirect, render
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 
+
+
 def login(request):
     # context = RequestContext(request, {
     #     'request': request, 'user': request.user})

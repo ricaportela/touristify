@@ -25,29 +25,41 @@ SECRET_KEY = 'p925hwwod)bnwu1+8$782xy&@_b$#tn1q&prmndiv2d&=6q6in'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+PROJECT_ROOT = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))
 
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
+LOGIN_REDIRECT_URL=  '/'
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': False
+    }
+}
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
-    'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+
     'rest_framework',
     'tourapp',
-    'social.apps.django_app.default',
 ]
 
 
@@ -67,7 +79,7 @@ ROOT_URLCONF = 'drf_tour_points.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(PROJECT_ROOT, 'templates', 'plain', 'example')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -85,11 +96,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'drf_tour_points.wsgi.application'
 
 AUTHENTICATION_BACKENDS = (
-    # Needed to login by username in Django admin and to ensure compatibility with other packages
     'django.contrib.auth.backends.ModelBackend',
-    # 'allauth' specific authentication methods
     'allauth.account.auth_backends.AuthenticationBackend',
-    'social.backends.facebook.FacebookOAuth2',
 )
 
 
@@ -122,11 +130,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-SOCIAL_AUTH_FACEBOOK_KEY = '528921603816644'
-SOCIAL_AUTH_FACEBOOK_SECRET = '62b1cd953125e512dc431e2677661d3e'
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -146,5 +149,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-print(TEMPLATES)
+
 
