@@ -5,13 +5,9 @@ django-allauth==0.31.0
 djangorestframework==3.6.2
 oauthlib==2.0.2
 packaging==16.8
-PyJWT==1.4.2
 pyparsing==2.2.0
-python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2017.2
 requests==2.13.0
 requests-oauthlib==0.8.0
 six==1.10.0
-social-auth-app-django==1.1.0
-social-auth-core==1.2.0
