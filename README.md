@@ -1,29 +1,26 @@
-Touristify REST API with Django
-=========================
-
+# Touristify REST API with Django
 Getting Started
 ---------------
 
-### Initial Setup ###
-1. Make a new virtualenv: ``virtualenv .venv``
-2. Activate the virtualenv: ``source env/bin/activate``
-3. Install Django: ``pip install -r requirements.txt``
-4. Edit ``drf_tour_points/settings.py:108`` to match your LANGUAGE_CODE
-5. Run the server: ``python manage.py runserver``
-6. Admin Site at ``http://127.0.0.1:8000/admin`` (admin:admin)
+# Initial Setup
+* Make a new virtualenv: ``virtualenv .venv``
+* Activate the virtualenv: ``source env/bin/activate``
+* Install Django: ``pip install -r requirements.txt``
+* Edit ``drf_tour_points/settings.py:108`` to match your LANGUAGE_CODE
+* Run the server: ``python manage.py runserver``
+* Admin Site at ``http://127.0.0.1:8000/admin`` (admin:admin)
+
+# Test API 
+* Open website in browser at ``http://127.0.0.1:8000/tourlist``, return list of tourist points
+* Open website in browser at ``http://127.0.0.1:8000/tourdetails/1/``, return details of tourist points
 
 
-### Test API ###
+# Unit Tests 
+* should be completed
 
-6. Open website in browser at ``http://127.0.0.1:8000/tourlist``, return list of tourist points
-7. Open website in browser at ``http://127.0.0.1:8000/tourdetails/1/``, return details of tourist points
-
-
-### Unit Tests ###
-1. must be completed
-
-### Docker ###
-1. Must be Completed
+# Docker
+* shoud be completed
+```sh
 
    Build docker container
    docker build -t myapplication .
@@ -31,12 +28,10 @@ Getting Started
    Running container
    docker run -p 8000:8000 -d myapplication
 
-   ############################################################
-   # Dockerfile for Django Rest API development environment
-   # Based on Ubuntu Image
-   ############################################################
+  # Dockerfile for Django Rest API development environment
+  # Based on Ubuntu Image
 
-   FROM ubuntu
+  FROM ubuntu
    MAINTAINER NeuralFoundry <neuralfoundry.com>
 
    RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
@@ -57,7 +52,7 @@ Getting Started
 
    USER developer
    ENV HOME /home/developer
-
+```
 
 ### Deploy ###
-1. Must be Completed
+1. should be Completed
